@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipower.website.dao.RNewsNewsTypeDao">
+<insert id="addRNewsNewsType" parameterType="com.unipower.website.entity.RNewsNewsType">
+    INSERT INTO
+              r_news_newstype(news_id, type_id)
+    values
+    <foreach collection="list" item="rNewsNewsType" index="index" separator="," >
+        (#{rNewsNewsType.news_id}, #{rNewsNewsType.type_id})
+    </foreach>
+</insert>
+
+    <delete id="deleteRByNewsId" parameterType="int">
+        DELETE
+        FROM
+              r_news_newstype
+        WHERE
+              news_id = #{news_id}
+    </delete>
+</mapper>

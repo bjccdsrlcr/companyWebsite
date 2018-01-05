@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipower.website.dao.CommentsDao">
+    <select id="getCommentsByNewsId" parameterType="int" resultType="com.unipower.website.entity.Comments">
+        SELECT
+              c.fid, c.date, c.text, c.user_id, c.news_id
+        FROM
+            comments c
+        INNER JOIN
+            news n
+        ON
+            c.news_id = n.fid
+        WHERE
+            c.news_id = #{newsId}
+        ORDER BY
+            c.date
+        DESC
+    </select>
+    <select id="getCommentsList" resultType="com.unipower.website.entity.Comments">
+        SELECT
+                *
+        FROM
+              comments
+    </select>
+    <insert id="addComments" parameterType="com.unipower.website.entity.Comments">
+        INSERT INTO
+                    comments(date, text, user_id, news_id)
+        VALUES(#{date}, #{text}, #{user_id}, #{news_id})
+    </insert>
+
+    <delete id="deleteComments" parameterType="int">
+        DELETE FROM
+                    comments
+        WHERE
+              fid = #{commentsId}
+    </delete>
+</mapper>

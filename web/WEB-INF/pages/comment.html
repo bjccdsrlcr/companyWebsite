@@ -1,0 +1,154 @@
+<div class="box">
+	<div class="box-header hidden">
+		<h3 class="box-title"></h3>
+	</div>
+	<!-- /.box-header -->
+	<div class="box-body">
+		<div class="btn-box">
+			<div class="btn-group">
+				<span class="btn btn-primary" onclick="openModalComment(0)">发表评论</span>
+			</div>
+		</div>
+		<table id="table_comment" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th><input type="checkbox" name="checkAll" onclick="checkAll()" /></th>
+					<th>新闻标题</th>
+					<th>发布作者</th>
+					<th>发布日期</th>
+					<th>新闻类别</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</div>
+
+<div class="modal" id="modal_comment">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">发布评论</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" role="form" onsubmit="return false;">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">所属新闻</label>
+						<div class="col-sm-10">
+							<select name="" class="form-control">
+								<option value="">新闻A</option>
+								<option value="">新闻B</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">评论内容</label>
+						<div class="col-sm-10">
+							<textarea rows="5" class="form-control"></textarea>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	//	l - Length changing 改变每页显示多少条数据的控件
+//	f - Filtering input 即时搜索框控件
+//	t - The Table 表格本身
+//	i - Information 表格相关信息控件
+//	p - Pagination 分页控件
+//	r - pRocessing 加载等待显示信息
+	$(function() {
+//		$("div.toolbar").html('<span class="btn btn-primary">删除</span>');
+		$comment=$("#table_comment").dataTable({
+//			"dom":'r<"right"f><"toolbar">t<"bottom"ip><"clear">',
+			"bPaginate": true,
+			"bLengthChange": false,
+			"bFilter": true,
+			"bSort": false,
+			"bInfo": true,
+			"bAutoWidth": false,
+			//			"processing": true,
+			//			"serverSide": true,
+			"ajax": {
+				"url": "js/table.json"
+			},
+			"autoWidth": false,
+			"columns": [{
+				"data": null,
+				"orderable": false,
+				"render": function(data, type, full, meta) {
+					return '<input type="checkbox" name="check"/>';
+				}
+			}, {
+				"data": "username"
+			}, {
+				"data": "sex"
+			}, {
+				"data": "city"
+			}, {
+				"data": "sign"
+			},{
+				"data": null,
+				"orderable": false,
+				"render": function(data, type, full, meta) {
+					var html='<span class="btn btn-primary btn-xs" title="删除" onclick="del(\''+data.id+'\')"><i class="fa fa-trash-o"></i></span>';
+					return html;
+				}
+			}],
+			"language": {
+				"search":"<i class='fa fa-search'></i>",
+				"lengthMenu": "_MENU_ 条记录每页",
+				"zeroRecords": "没有找到记录",
+				"info": "第 _PAGE_ 页 ( 总共 _PAGES_ 页 )",
+				"infoEmpty": "无记录",
+				"infoFiltered": "(从 _MAX_ 条记录过滤)",
+				"paginate": {
+					"previous": "上一页",
+					"next": "下一页"
+				}
+			},
+		})
+		
+	});
+	
+	function checkAll(){
+		if($('input[name=checkAll]')[0].checked){
+			$('input[name=check]').each(function(idx,item){
+				$(this).attr("checked", true);
+			})
+		}else{
+			$('input[name=check]').each(function(idx,item){
+				$(this).attr("checked", false);
+			})
+		}
+	}
+	function openModalComment(flag){
+		$('#modal_comment').modal('show');
+		if (flag==0) {
+			$('#modal_comment').find('.modal-title').html('发表评论');
+		} 
+	}
+
+	function del(id){
+		if(confirm('确认删除？')){
+//			$.ajax({
+//	            url: "/del.jsp",
+//	            data: {
+//	                "id": id
+//	            }, success: function (data) {
+//	                $product.ajax.reload();
+//	                console.log("删除成功" + data);
+//	            }
+//	        });
+		}
+	}	
+</script>

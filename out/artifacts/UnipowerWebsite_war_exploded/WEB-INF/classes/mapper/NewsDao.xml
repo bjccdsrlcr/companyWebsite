@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipower.website.dao.NewsDao">
+    <insert id="addNews" parameterType="com.unipower.website.entity.News" keyProperty="fid">
+        INSERT INTO
+                    news(title,author,date,text)
+        VALUES (#{title}, #{author}, #{date}, #{text})
+    </insert>
+
+    <select id="getNewsById" parameterType="int" resultType="com.unipower.website.entity.News">
+        SELECT
+            *
+        FROM
+             news
+        WHERE fid = #{fid}
+    </select>
+
+
+    <select id="getNews" resultType="com.unipower.website.entity.News">
+        SELECT
+            *
+        FROM
+            news
+        WHERE
+            is_pub = TRUE
+        ORDER BY
+            date
+        DESC
+        limit 30
+    </select>
+
+    <select id="getAllNews" resultType="com.unipower.website.entity.News">
+        SELECT
+            *
+        FROM
+            news
+        ORDER BY
+            date
+        DESC
+    </select>
+
+    <delete id="deleteNews">
+        DELETE
+        FROM
+            news
+        WHERE fid = #{fid}
+    </delete>
+
+    <select id="getNewsByType" resultType="com.unipower.website.entity.News">
+        SELECT  n.fid, n.date, n.author, n.title, n.text
+        FROM
+              r_news_newstype r
+        INNER JOIN
+              news n
+        ON  r.news_id = n.fid
+        INNER JOIN
+              news_type t
+        ON  r.type_id = t.fid
+        WHERE t.fid = #{typeId}
+    </select>
+
+    <select id="getNewsByTitle" resultType="com.unipower.website.entity.News">
+        SELECT
+              *
+        FROM
+              news
+        WHERE
+              title LIKE %#{title}%
+    </select>
+
+    <select id="getNewsByDate" resultType="com.unipower.website.entity.News">
+        SELECT
+              *
+        FROM
+              news
+        WHERE
+              date = #{date}
+    </select>
+
+    <update id="updateNews" parameterType="com.unipower.website.entity.News">
+        UPDATE
+              news
+        SET
+            title = #{title},
+            date = #{date},
+            text = #{text},
+            author = #{author}
+        WHERE
+            fid = #{fid}
+    </update>
+
+    <update id="updateNewsIsPub" parameterType="com.unipower.website.entity.News">
+        UPDATE
+              news
+        SET
+            is_pub = #{is_pub}
+        WHERE
+            fid = #{fid}
+    </update>
+</mapper>

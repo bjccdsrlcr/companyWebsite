@@ -1,0 +1,23 @@
+table th,
+table td {
+	padding: 5px;
+	!important;
+}
+
+.modal-header,
+.modal-footer {
+	padding: 10px;
+}
+
+.btn-box {
+	padding: 5px;
+	text-align: right;
+}
+
+td>.btn {
+	margin: 0 2px;
+}
+
+.checkbox.pull-left{
+	margin-right: 15px;
+}
