@@ -122,17 +122,19 @@ public class NewsController {
         List<Comments> commentsList = commentService.getCommentsList(newsId);
         model.addAttribute("commentsList", commentsList);
         model.addAttribute("news", news);
-        return "detail";
+        return "article";
     }
 
     @RequestMapping(value = "/newsPubList")
     private String newsPubList(Model model, HttpSession session){
-        List<News> list = newsService.getPubNews();
+        List<News> newsPubList = newsService.getPubNews();
+        List<NewsType> newsTypeList = newsTypeService.getNewsTypeList();
         String username = (String)session.getAttribute("username");
         System.out.println(username);
-        model.addAttribute("list", list);
+        model.addAttribute("newsPubList", newsPubList);
+        model.addAttribute("newsTypeList", newsTypeList);
         model.addAttribute("username", username);
-        return "newsPubList";
+        return "news";
     }
 
     @RequestMapping(value = "/newsAllList")
@@ -165,7 +167,8 @@ public class NewsController {
     @RequestMapping(value = "/getNewsByType")
     @ResponseBody
     private List<News> typeListData(HttpServletRequest request){
-        int typeId = Integer.parseInt(request.getParameter("typeId"));
+        // 要选择已经发布的新闻
+        int typeId = Integer.parseInt(request.getParameter("type_id"));
         List<News> list = newsService.getNewsByType(typeId);
         return list;
     }

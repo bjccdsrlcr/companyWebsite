@@ -21,4 +21,14 @@ public class IndexController {
 //        }
         return "index";
     }
+    @RequestMapping("/indexPageShow")
+    private String indexPageShow(HttpSession session){
+//        if (session.getAttribute("userId") == null){
+//            return "redirect:/login";
+//        }
+//        else {
+//            return "index";
+//        }
+        return "indexShow";
+    }
 }

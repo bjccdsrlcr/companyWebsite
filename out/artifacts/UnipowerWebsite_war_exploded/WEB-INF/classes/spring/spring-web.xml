@@ -23,12 +23,22 @@
 	 -->
 	 <mvc:default-servlet-handler/>
 	 <!-- 3.配置jsp 显示ViewResolver -->
+	<!--配置多个视图，重写checkResource方法，就可以成功-->
+	<bean id="htmlviewResolver"
+		  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="com.unipower.website.util.HtmlResourceView"/>
+		<property name="order" value="0" />
+		<property name="prefix" value="/WEB-INF/jsp/showPages/"/>
+		<property name="suffix" value=".jsp" />
+		<!--<property name="contentType" value="text/html;charset=UTF-8"></property>-->
+	</bean>
+
+
 	 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	 	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
-	 	<property name="prefix" value="/WEB-INF/jsp/" />
+	 	<property name="prefix" value="/WEB-INF/jsp/managerPages/" />
 	 	<property name="suffix" value=".jsp" />
 	 </bean>
-	 
 	 <!-- 4.扫描web相关的bean -->
 	 <context:component-scan base-package="com.unipower.website.web" />
 </beans>
