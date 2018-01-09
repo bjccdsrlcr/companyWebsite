@@ -6,10 +6,7 @@ import com.unipower.website.entity.Comments;
 import com.unipower.website.entity.News;
 import com.unipower.website.entity.NewsType;
 import com.unipower.website.entity.RNewsNewsType;
-import com.unipower.website.service.CommentService;
-import com.unipower.website.service.NewsService;
-import com.unipower.website.service.NewsTypeService;
-import com.unipower.website.service.RNewsNewsTypeService;
+import com.unipower.website.service.*;
 import com.unipower.website.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +26,8 @@ import java.util.*;
 @Controller
 @RequestMapping("/news")
 public class NewsController {
+    @Autowired
+    private AdminService adminService;
     @Autowired
     private NewsService newsService;
     @Autowired
@@ -111,15 +110,20 @@ public class NewsController {
         return result;
     }
     // 获得某一条新闻的详细信息
-    @RequestMapping(value = "/newsId={newsId}/detail", method = RequestMethod.GET)
+    @RequestMapping(value = "/newsId={newsId}/detail")
     private String newsDetail(@PathVariable("newsId") int newsId, Model model, HttpServletRequest request){
         //如果没有传值，进行重定向处理
         if (newsId == 0){
             return "redirect:/news/add";
         }
         News news = newsService.getNewsById(newsId);
-        System.out.println("newsId:" + newsId);
         List<Comments> commentsList = commentService.getCommentsList(newsId);
+        List<NewsType> newsTypeList = newsTypeService.getTypesByNewsId(newsId);
+        for (int i = 0; i < commentsList.size(); i++){
+            commentsList.get(i).setUser_name(adminService.findAdminNameById(commentsList.get(i).getUser_id()));
+            System.out.println(commentsList.get(i).getUser_name());
+        }
+        model.addAttribute("newsTypeList", newsTypeList);
         model.addAttribute("commentsList", commentsList);
         model.addAttribute("news", news);
         return "article";

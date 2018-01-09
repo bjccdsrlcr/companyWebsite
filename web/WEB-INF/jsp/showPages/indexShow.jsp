@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: bjccdsrlcr
@@ -44,57 +45,50 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2 col-sm-2">
-                <a class="scroll site-logo" href="#promo-block"><img src="/resources/assets/images/logo.png" height="30" alt="Unipower"></a>
+                <a class="scroll site-logo" href="/index/indexPageShow"><img src="/resources/assets/images/logo.png" height="30" alt="Unipower"></a>
             </div>
             <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
             <div class="col-md-10 ">
                 <div class="navbar" style="margin-bottom: 0;">
                     <ul class="nav navbar-nav pull-right" id="menu">
                         <li class="current">
-                            <a href="javascript:void(0)" onclick="loadPage('main.html')">首页</a>
+                            <a href="javascript:void(0)" onclick="loadPage('/main')">首页</a>
                         </li>
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">公司产品</a>
                             <ul class="dropdown-menu animated animated-fast flipInX">
+                                <c:forEach items="${productsList}" var="sk">
                                 <li>
-                                    <a href="javascript:void(0)" onclick="loadPage('product.html')">大数据</a>
+                                    <a href="javascript:void(0)" onclick="getProById(${sk.fid})">${sk.pro_name}</a>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0)" onclick="loadPage('product.html')">云计算</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" onclick="loadPage('product.html')">态势感知</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" onclick="loadPage('product.html')">监控运维</a>
-                                </li>
+                                </c:forEach>
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" onclick="loadPage('solution.html')">解决方法</a>
+                            <a href="javascript:void(0)" onclick="loadPage('/solutions/solutionShowList')">解决方法</a>
                         </li>
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">关于我们</a>
                             <ul class="dropdown-menu animated animated-fast flipInX">
                                 <li>
-                                    <a href="javascript:void(0)" onclick="loadPage('talent.html')">人才发展</a>
+                                    <a href="javascript:void(0)" onclick="loadPage('/talent')">人才发展</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" onclick="loadPage('idea.html')">核心理念</a>
+                                    <a href="javascript:void(0)" onclick="loadPage('/idea')">核心理念</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" onclick="loadPage('honour.html')">公司荣誉</a>
+                                    <a href="javascript:void(0)" onclick="loadPage('/honour')">公司荣誉</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" onclick="loadPage('news.html')">新闻中心</a>
+                                    <a href="javascript:void(0)" onclick="loadPage('/news/newsPubList')">新闻中心</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" onclick="loadPage('job.html')">工作机会</a>
+                                    <a href="javascript:void(0)" onclick="loadPage('/job')">工作机会</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="javascript:void(0)" onclick="loadPage('service.html')">售后服务</a>
+                            <a href="javascript:void(0)" onclick="loadPage('/service')">售后服务</a>
                         </li>
                     </ul>
                 </div>
@@ -119,17 +113,16 @@
             <div class="col-md-6 col-sm-6 pre-footer-col">
                 <h2>快速通达</h2>
                 <ul class="bottom-list">
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('talent.html')">人才发展</a></li>
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('idea.html')">核心理念</a></li>
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('honour.html')">公司荣誉</a></li>
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('news.jsp')">新闻中心</a></li>
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('job.html')">工作机会</a></li>
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('service.html')">售后服务</a></li>
+                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('/talent')">人才发展</a></li>
+                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('/idea')">核心理念</a></li>
+                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('/honour')">公司荣誉</a></li>
+                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('/news/newsPubList')">新闻中心</a></li>
+                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('/job')">工作机会</a></li>
+                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('/service')">售后服务</a></li>
                     <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('solution.html')">解决方法</a></li>
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('product.html')">大数据</a></li>
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('product.html')">云计算</a></li>
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('product.html')">态势感知</a></li>
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('product.html')">监控运维</a></li>
+                    <c:forEach items="${productsList}" var="sk">
+                        <li class="col-sm-4"><a href="javascript:void(0)" onclick="getProById(${sk.fid})">${sk.pro_name}</a></li>
+                    </c:forEach>
                 </ul>
             </div>
             <div class="col-md-6 col-sm-6 pre-footer-col">
@@ -198,6 +191,15 @@
 <script src="/resources/assets/plugins/jQuery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="/resources/assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="/resources/assets/js/common.js"></script>
+<script type="text/javascript">
+    function getProById(fid) {
+        loadPage("/products/productsId="+fid+"/detail");
+        $('.wrapper').removeClass('slideInRight');
+        setTimeout(function() {
+            $('.wrapper').addClass('slideInRight');
+        }, 100)
+    }
+</script>
 </body>
 
 </html>

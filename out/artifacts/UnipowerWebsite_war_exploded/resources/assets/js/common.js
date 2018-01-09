@@ -1,6 +1,6 @@
 $(function(){
 	//默认加载主页面
-	loadPage('main.html');
+	loadPage('/main');
 
 	//菜单的选中样式动画
 	$('#menu').on('mouseenter','>li',function(){
@@ -49,11 +49,19 @@ function goTop(){
 
 //加载页面
 function loadPage(url){
-	$('.wrapper').removeClass('animated-fast slideInUp')
-	$('.wrapper').load(''+url+'',function(){
-		location.hash=url;
-		$('.wrapper').addClass('animated-fast slideInUp');
-	});
+	$('.wrapper').removeClass('animated-fast slideInUp');
+    $.ajax({
+        type: 'post',
+        url: url,
+        success:function (result) {
+        	console.log(result);
+            $('.wrapper').html(result);
+        }
+    });
+	// $('.wrapper').load(''+url+'',function(){
+    // 	location.hash=url;
+    // 	$('.wrapper').addClass('animated-fast slideInUp');
+    // });
 	goTop();
 }
 

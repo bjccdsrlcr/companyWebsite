@@ -37,6 +37,7 @@
           <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.54" />
           <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.44" />
         </element>
+        <element id="directory" name="pic" />
       </element>
     </root>
   </artifact>

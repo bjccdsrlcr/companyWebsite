@@ -41,11 +41,16 @@ public class CommentController {
         String text  = request.getParameter("text");
         // 判断一下当前用户的身份， 用session , 暂时默认为匿名用户
         System.out.println(session.getAttribute("pri_id") + "username: "+ session.getAttribute("username"));
-        int user_id = (Integer) session.getAttribute("userId");
+        Object user_id = session.getAttribute("userId");
+        // 当session为空时，为未登录状态，将user_id设置为2 是因为数据库设置了当id为2时为普通用户
+        if (user_id == null) {
+            user_id = 2;
+        }
         String path = request.getRequestURI();
-        int news_id = GetIDs.getIDsFromPath(path);
+        //int news_id = GetIDs.getIDsFromPath(path);
+        int news_id = Integer.parseInt(request.getParameter("fid"));
         Date date = DateUtil.getFormatDate(new Date());
-        commentService.addComment(date, text, user_id, news_id);
+        commentService.addComment(date, text, (Integer) user_id, news_id);
         Map<String, String> result = new HashMap<String, String>();
         result.put("result", "success");
         return result;

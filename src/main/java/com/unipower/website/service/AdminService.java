@@ -27,4 +27,8 @@ public class AdminService {
     public Admin findAdminById(int fid){
         return adminDao.findAdminById(fid);
     }
+
+    public String findAdminNameById(int fid){
+        return adminDao.findAdminNameById(fid);
+    }
 }

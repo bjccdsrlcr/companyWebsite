@@ -14,4 +14,5 @@ public interface AdminDao {
 
     public Admin findAdminById(@Param("fid") int fid);
 
+    public String findAdminNameById(@Param("fid") int fid);
 }

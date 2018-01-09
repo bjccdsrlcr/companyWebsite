@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.unipower.website.dao.SolutionDao">
+    <insert id="addSolution" parameterType="com.unipower.website.entity.Solutions">
+        INSERT INTO
+        solutions(sol_name, intro)
+        VALUES(#{sol_name}, #{intro})
+    </insert>
+
+    <delete id="deleteSolution" parameterType="int">
+        DELETE FROM
+        solutions
+        WHERE
+        fid = #{fid}
+    </delete>
+
+    <update id="updateSolution" parameterType="com.unipower.website.entity.Solutions">
+        UPDATE
+        solutions
+        SET
+        sol_name = #{sol_name},
+        intro = #{intro}
+        WHERE
+        fid = #{fid}
+    </update>
+
+    <select id="getSolById" resultType="com.unipower.website.entity.Solutions">
+        SELECT
+        *
+        FROM
+        solutions
+        WHERE
+        fid = #{fid}
+    </select>
+
+    <select id="getSolList" resultType="com.unipower.website.entity.Solutions">
+        SELECT
+        *
+        FROM
+        solutions
+        limit 10
+    </select>
+</mapper>

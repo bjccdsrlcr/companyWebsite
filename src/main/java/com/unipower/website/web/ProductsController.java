@@ -42,15 +42,11 @@ public class ProductsController {
     }
 
     // 获得某一条新闻的详细信息页面
-    @RequestMapping(value = "/productsId={productsId}/detail", method = RequestMethod.GET)
+    @RequestMapping(value = "/productsId={productsId}/detail")
     private String productsDetail(@PathVariable("productsId") int productsId, Model model){
-        //如果没有传值，进行重定向处理
-        if (productsId == 0){
-            return "redirect:/news/add";
-        }
         Products products = productsService.getProById(productsId);
         model.addAttribute("products", products);
-        return "productsDetail";
+        return "product";
     }
 
 
@@ -71,12 +67,10 @@ public class ProductsController {
         return result;
     }
 
-    @RequestMapping(value = "/getProductById", method = RequestMethod.GET)
+    @RequestMapping(value = "/getProductById")
     @ResponseBody
-    private Products getProductById(int productsId){
-        //
-        //
-        // 怎么拿到ID值
+    private Products getProductById(HttpServletRequest request){
+        int productsId = Integer.parseInt(request.getParameter("fid"));
         return productsService.getProById(productsId);
     }
 

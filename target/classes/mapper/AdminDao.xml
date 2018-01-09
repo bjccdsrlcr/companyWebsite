@@ -31,4 +31,12 @@
         WHERE
             fid = #{fid}
     </select>
+    <select id="findAdminNameById" resultType="java.lang.String">
+        SELECT
+              user_name
+        FROM
+              users
+        WHERE
+             fid = #{fid}
+    </select>
 </mapper>

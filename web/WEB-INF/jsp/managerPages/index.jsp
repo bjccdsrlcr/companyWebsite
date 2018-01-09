@@ -92,6 +92,11 @@
                         <i class="fa fa-laptop"></i> <span>产品管理</span>
                     </a>
                 </li>
+                <li>
+                    <a href="javascript:;" onclick="menu('/solutions/solutionManageList')">
+                        <i class="fa fa-laptop"></i> <span>解决方案管理</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->

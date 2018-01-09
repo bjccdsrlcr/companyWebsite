@@ -62,6 +62,13 @@
                             <input type="hidden" id="proIdKey" class="form-control" />
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">产品简介</label>
+                        <div class="col-sm-10">
+                            <input type="file" id="productImg">
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -220,6 +227,19 @@
             $('#modal_product').find('.modal-footer').html(
                 '<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>'+
                 '<button type="button" id="proUpdateBtn" class="btn btn-primary">更新</button>');
+            $.ajax({
+                type: 'post',
+                url: '/products/getProductById',
+                data: {
+                    'fid': fid
+                },
+                async: false,
+                success: function (result) {
+                    console.log(result);
+                    $('#productNameKey').val(result.pro_name);
+                    $('#productIntrodKey').val(result.intro);
+                }
+            });
             $('#proUpdateBtn').click(function () {
                 var productName = $('#productNameKey').val();
                 var productIntrod = $('#productIntrodKey').val();

@@ -48,8 +48,8 @@
         $(this).addClass('active').siblings('.btn').removeClass('active')
     });
     function getNewsById(fid) {
-        //$('.wrapper').load('');
-        window.location.hash = "article.jsp";
+        loadPage("/news/newsId="+fid+"/detail");
+        //window.location.hash = "article.jsp";
         $('.wrapper').removeClass('slideInRight');
         setTimeout(function() {
             $('.wrapper').addClass('slideInRight');
@@ -68,7 +68,7 @@
                 for(var i = 0; i < result.length; i++){
                     html+= '<li>'+
                             '<h4 class="news-title">'+
-                            '<a href="javascript:void(0)">'+result[i].title+'</a>'+
+                            '<a href="javascript:void(0)" onclick="getNewsById('+result[i].fid+')">'+result[i].title+'</a>'+
                             '<span class="pull-right">'+result[i].date+'</span>'+
                             '</h4>'+
                             '<p class="news-intro">'+result[i].author+'</p>'+
