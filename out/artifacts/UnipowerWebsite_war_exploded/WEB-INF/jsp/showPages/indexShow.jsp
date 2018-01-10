@@ -119,7 +119,7 @@
                     <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('/news/newsPubList')">新闻中心</a></li>
                     <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('/job')">工作机会</a></li>
                     <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('/service')">售后服务</a></li>
-                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('solution.html')">解决方案</a></li>
+                    <li class="col-sm-4"><a href="javascript:void(0)" onclick="loadPage('/solutions/solutionShowList')">解决方案</a></li>
                     <c:forEach items="${productsList}" var="sk">
                         <li class="col-sm-4"><a href="javascript:void(0)" onclick="getProById(${sk.fid})">${sk.pro_name}</a></li>
                     </c:forEach>

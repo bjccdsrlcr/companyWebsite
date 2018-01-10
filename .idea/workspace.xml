@@ -5,84 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d454eecd-ba6a-4759-ac6e-582fc6bfb5f3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/service/FileService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/util/StringUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/testfile.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/css/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/plugins/Summernote/css/summernote-bs3.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/plugins/Summernote/css/summernote.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/plugins/Summernote/js/summernote-zh-CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/plugins/Summernote/js/summernote.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/script/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/script/echarts.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/script/jQuery-2.1.4.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/script/jquery.form.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/article.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/case.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/detail.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/introduce.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/main.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/news.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/solution.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/solution_detail.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/resources/js/table.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/resources/js/table.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/dao/ProductsDao.class" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/dao/ProductsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/entity/News.class" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/entity/News.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/entity/Products.class" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/entity/Products.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/service/ProductsService.class" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/service/ProductsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/util/DateUtil.class" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/util/DateUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/web/CommentController.class" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/web/CommentController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/web/NewsController.class" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/web/NewsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/web/ProductsController.class" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/com/unipower/website/web/ProductsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/unipower/website/dao/ProductsDao.class" afterPath="$PROJECT_DIR$/target/classes/com/unipower/website/dao/ProductsDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/unipower/website/entity/News.class" afterPath="$PROJECT_DIR$/target/classes/com/unipower/website/entity/News.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/unipower/website/entity/Products.class" afterPath="$PROJECT_DIR$/target/classes/com/unipower/website/entity/Products.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/unipower/website/service/ProductsService.class" afterPath="$PROJECT_DIR$/target/classes/com/unipower/website/service/ProductsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/unipower/website/util/DateUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/unipower/website/util/DateUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/unipower/website/web/CommentController.class" afterPath="$PROJECT_DIR$/target/classes/com/unipower/website/web/CommentController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/unipower/website/web/NewsController.class" afterPath="$PROJECT_DIR$/target/classes/com/unipower/website/web/NewsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/unipower/website/web/ProductsController.class" afterPath="$PROJECT_DIR$/target/classes/com/unipower/website/web/ProductsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/UnipowerWebsite_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/UnipowerWebsite_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/cb4604c9-10ec-4cc3-81cb-b42a85d2feea.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/cb4604c9-10ec-4cc3-81cb-b42a85d2feea.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UnipowerWebsite.iml" afterPath="$PROJECT_DIR$/UnipowerWebsite.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/mapper/ProductsDao.xml" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/classes/mapper/ProductsDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/managerPages/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/managerPages/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/managerPages/newsAllList1.jsp" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/managerPages/newsAllList1.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/managerPages/productList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/managerPages/productList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/managerPages/solutionManageList.jsp" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/managerPages/solutionManageList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/indexShow.jsp" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/indexShow.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/main.jsp" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/news.jsp" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/news.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/product.jsp" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/product.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/solution_detail.jsp" afterPath="$PROJECT_DIR$/out/artifacts/UnipowerWebsite_war_exploded/WEB-INF/jsp/showPages/solution_detail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/unipower/website/dao/NewsDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/dao/NewsDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/unipower/website/dao/ProductsDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/dao/ProductsDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/unipower/website/entity/News.java" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/entity/News.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/unipower/website/entity/Products.java" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/entity/Products.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/unipower/website/service/ProductsService.java" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/service/ProductsService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/unipower/website/util/DateUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/util/DateUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/unipower/website/web/CommentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/web/CommentController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/unipower/website/web/FileUploadController.java" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/web/FileUploadController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/unipower/website/web/NewsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/web/NewsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/unipower/website/web/ProductsController.java" afterPath="$PROJECT_DIR$/src/main/java/com/unipower/website/web/ProductsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProductsDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductsDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/ProductsDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/ProductsDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/index.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/newsAllList1.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/newsAllList1.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/productList.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/productList.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/solutionManageList.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/solutionManageList.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/NewsDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/NewsDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/indexShow.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/indexShow.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/main.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/news.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/news.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/product.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/product.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/solution_detail.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/solution_detail.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -275,7 +201,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsDao.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NewsDao.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/unipower/website/dao/NewsDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -303,19 +229,19 @@
       <file leaf-file-name="NewsDao.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/NewsDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="8" selection-end-column="54" />
+            <state relative-caret-position="442">
+              <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
               <folding>
-                <marker date="1514973490793" expanded="true" signature="318:433" ph="INSERT INTO news" />
-                <marker date="1514973490793" expanded="true" signature="553:631" ph="SELECT * FRO... news" />
-                <marker date="1514973490793" expanded="true" signature="728:882" ph="SELECT * FRO... news" />
-                <marker date="1514973490793" expanded="true" signature="981:1078" ph="SELECT * FRO... news" />
-                <marker date="1514973490793" expanded="true" signature="1131:1194" ph="DELETE FROM " />
-                <marker date="1514973490793" expanded="true" signature="1296:1566" ph="SELECT n.fid... r_news_newstype" />
-                <marker date="1514973490793" expanded="true" signature="1669:1773" ph="SELECT * FRO... news" />
-                <marker date="1514973490793" expanded="true" signature="1875:1972" ph="SELECT * FRO... news" />
-                <marker date="1514973490793" expanded="true" signature="2074:2267" ph="UPDATE news " />
-                <marker date="1514973490793" expanded="true" signature="2374:2481" ph="UPDATE news " />
+                <marker date="1515574909455" expanded="true" signature="318:433" ph="INSERT INTO news" />
+                <marker date="1515574909455" expanded="true" signature="553:631" ph="SELECT * FRO... news" />
+                <marker date="1515574909455" expanded="true" signature="728:882" ph="SELECT * FRO... news" />
+                <marker date="1515574909455" expanded="true" signature="981:1078" ph="SELECT * FRO... news" />
+                <marker date="1515574909455" expanded="true" signature="1131:1194" ph="DELETE FROM " />
+                <marker date="1515574909455" expanded="true" signature="1296:1608" ph="SELECT n.fid... r_news_newstype" />
+                <marker date="1515574909455" expanded="true" signature="1711:1815" ph="SELECT * FRO... news" />
+                <marker date="1515574909455" expanded="true" signature="1917:2014" ph="SELECT * FRO... news" />
+                <marker date="1515574909455" expanded="true" signature="2116:2309" ph="UPDATE news " />
+                <marker date="1515574909455" expanded="true" signature="2416:2523" ph="UPDATE news " />
               </folding>
             </state>
           </provider>
@@ -351,11 +277,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="indexShow.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="indexShow.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/showPages/indexShow.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="67" column="111" lean-forward="false" selection-start-line="67" selection-start-column="111" selection-end-line="67" selection-end-column="111" />
+            <state relative-caret-position="1451">
+              <caret line="193" column="31" lean-forward="true" selection-start-line="193" selection-start-column="31" selection-end-line="193" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -364,9 +290,21 @@
       <file leaf-file-name="solutionManageList.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/solutionManageList.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="-1015">
+              <caret line="171" column="22" lean-forward="true" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/showPages/main.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1162">
+              <caret line="136" column="74" lean-forward="true" selection-start-line="136" selection-start-column="74" selection-end-line="136" selection-end-column="74" />
+              <folding>
+                <marker date="1515575628621" expanded="false" signature="7829:7846" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -441,7 +379,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/resources/assets/html/solution_detail.html" />
         <option value="$PROJECT_DIR$/web/resources/assets/html/talent.html" />
         <option value="$PROJECT_DIR$/web/resources/assets/html/news.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/unipower/website/dao/AdminDao.java" />
@@ -478,7 +415,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ProductsDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/unipower/website/web/ProductsController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/productList.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/main.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/product.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/solution_detail.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/unipower/website/web/CommentController.java" />
@@ -491,7 +427,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/unipower/website/web/NewsController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/solutionManageList.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/solutionShowList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/NewsDao.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/indexShow.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/showPages/main.jsp" />
       </list>
     </option>
   </component>
@@ -1615,12 +1553,12 @@
       <workItem from="1515375086028" duration="8929000" />
       <workItem from="1515384248595" duration="651000" />
       <workItem from="1515461357799" duration="24899000" />
-      <workItem from="1515548083852" duration="21778000" />
+      <workItem from="1515548083852" duration="24554000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245924000" />
+    <option name="totallyTimeSpent" value="248700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
@@ -1974,16 +1912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/showPages/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="158" column="24" lean-forward="true" selection-start-line="158" selection-start-column="24" selection-end-line="158" selection-end-column="24" />
-          <folding>
-            <marker date="1515564982908" expanded="false" signature="7873:7890" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/showPages/product.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -2104,33 +2032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/unipower/website/dao/NewsDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/NewsDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="8" selection-end-column="54" />
-          <folding>
-            <marker date="1514973490793" expanded="true" signature="318:433" ph="INSERT INTO news" />
-            <marker date="1514973490793" expanded="true" signature="553:631" ph="SELECT * FRO... news" />
-            <marker date="1514973490793" expanded="true" signature="728:882" ph="SELECT * FRO... news" />
-            <marker date="1514973490793" expanded="true" signature="981:1078" ph="SELECT * FRO... news" />
-            <marker date="1514973490793" expanded="true" signature="1131:1194" ph="DELETE FROM " />
-            <marker date="1514973490793" expanded="true" signature="1296:1566" ph="SELECT n.fid... r_news_newstype" />
-            <marker date="1514973490793" expanded="true" signature="1669:1773" ph="SELECT * FRO... news" />
-            <marker date="1514973490793" expanded="true" signature="1875:1972" ph="SELECT * FRO... news" />
-            <marker date="1514973490793" expanded="true" signature="2074:2267" ph="UPDATE news " />
-            <marker date="1514973490793" expanded="true" signature="2374:2481" ph="UPDATE news " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/unipower/website/web/NewsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1134">
@@ -2151,14 +2052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3497">
           <caret line="229" column="14" lean-forward="true" selection-start-line="229" selection-start-column="14" selection-end-line="229" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/solutionManageList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2187,10 +2080,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/managerPages/solutionManageList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1015">
+          <caret line="171" column="22" lean-forward="true" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/NewsDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="62" column="29" lean-forward="false" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding>
+            <marker date="1515574909455" expanded="true" signature="318:433" ph="INSERT INTO news" />
+            <marker date="1515574909455" expanded="true" signature="553:631" ph="SELECT * FRO... news" />
+            <marker date="1515574909455" expanded="true" signature="728:882" ph="SELECT * FRO... news" />
+            <marker date="1515574909455" expanded="true" signature="981:1078" ph="SELECT * FRO... news" />
+            <marker date="1515574909455" expanded="true" signature="1131:1194" ph="DELETE FROM " />
+            <marker date="1515574909455" expanded="true" signature="1296:1608" ph="SELECT n.fid... r_news_newstype" />
+            <marker date="1515574909455" expanded="true" signature="1711:1815" ph="SELECT * FRO... news" />
+            <marker date="1515574909455" expanded="true" signature="1917:2014" ph="SELECT * FRO... news" />
+            <marker date="1515574909455" expanded="true" signature="2116:2309" ph="UPDATE news " />
+            <marker date="1515574909455" expanded="true" signature="2416:2523" ph="UPDATE news " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/showPages/indexShow.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="67" column="111" lean-forward="false" selection-start-line="67" selection-start-column="111" selection-end-line="67" selection-end-column="111" />
+        <state relative-caret-position="1451">
+          <caret line="193" column="31" lean-forward="true" selection-start-line="193" selection-start-column="31" selection-end-line="193" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/showPages/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1162">
+          <caret line="136" column="74" lean-forward="true" selection-start-line="136" selection-start-column="74" selection-end-line="136" selection-end-column="74" />
+          <folding>
+            <marker date="1515575628621" expanded="false" signature="7829:7846" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/unipower/website/dao/NewsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding />
         </state>
       </provider>

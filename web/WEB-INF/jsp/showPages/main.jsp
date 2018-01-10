@@ -134,7 +134,7 @@
             <h4 class="text-left">最新动态 <a href="javascript:;" class="pull-right more" onclick="loadPage('/news/newsPubList')">More <i class="fa fa-arrow-right"></i></a></h4>
             <ul class="recent-list">
                 <c:forEach items="${newsPubList}" var="sk">
-                    <li><i class="fa fa-paperclip"></i>&nbsp;&nbsp;<a onclick="getNewsById(${sk.fid})">${sk.title}</a><span>08-15</span></li>
+                    <li><i class="fa fa-paperclip"></i>&nbsp;&nbsp;<a onclick="getNewsById(${sk.fid})">${sk.title}</a><span></span></li>
                 </c:forEach>
             </ul>
         </div>
@@ -154,7 +154,6 @@
                         <img src="${sk.url}" width="100%" height="200"/>
                     </div>
                     <h3><a href="javascript:;">${sk.pro_name}</a></h3>
-                    <p>${sk.intro}</p>
                 </div>
             </c:forEach>
         </div>

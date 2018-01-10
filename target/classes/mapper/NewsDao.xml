@@ -59,6 +59,8 @@
               news_type t
         ON  r.type_id = t.fid
         WHERE t.fid = #{typeId}
+        AND
+              n.is_pub = TRUE
     </select>
 
     <select id="getNewsByTitle" resultType="com.unipower.website.entity.News">
