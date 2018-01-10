@@ -12,6 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <title>优普网站管理后台</title>
+    <link rel="stylesheet" href="/resources/css/reset.css" />
     <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/resources/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="/resources/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
@@ -19,6 +20,9 @@
     <link href="/resources/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/resources/plugins/wangEditor/wangEditor.min.css" />
     <link rel="stylesheet" href="/resources/css/common.css" />
+    <link rel="stylesheet" href="/resources/css/bootstrap.css" />
+    <link rel="stylesheet" href="/resources/plugins/Summernote/css/summernote.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/plugins/Summernote/css/summernote-bs3.css" />
 </head>
 
 <body class="skin-blue sidebar-mini fixed">
@@ -308,7 +312,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.1.4 -->
-<script src="/resources/script/jquery-3.2.1.min.js"></script>
+<script src="/resources/script/jQuery-2.1.4.min.js"></script>
 <script src="/resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="/resources/dist/js/moment.min.js" type="text/javascript"></script>
 <script src="/resources/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
@@ -317,6 +321,10 @@
 <script src="/resources/plugins/datatables/jquery.dataTables.min.js" type="text/javascript"></script>
 <script src="/resources/plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
 <script src="/resources/script/wangEditor.min.js"></script>
+<script src="/resources/script/jquery.form.js"></script>
+<script src="/resources/script/bootstrap.js"></script>
+<script src="/resources/plugins/Summernote/js/summernote.min.js"></script>
+<script src="/resources/plugins/Summernote/js/summernote-zh-CN.js"></script>
 <script>
     $('.sidebar-menu').on('click','li',function(){
         $(this).addClass('active').siblings('li').removeClass('active');

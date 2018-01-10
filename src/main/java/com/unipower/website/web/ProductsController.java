@@ -1,14 +1,14 @@
 package com.unipower.website.web;
 
+import com.alibaba.fastjson.JSONObject;
 import com.unipower.website.entity.Products;
+import com.unipower.website.service.FileService;
 import com.unipower.website.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -23,19 +23,27 @@ import java.util.Map;
 public class ProductsController {
     @Autowired
     private ProductsService productsService;
-
+    @Autowired
+    private FileService fileService;
     //添加产品信息页面
     @RequestMapping(value = "/addProducts")
     private String addProductPage(){
         return  "addProduct";
     }
+
     @RequestMapping(value = "/addProductsData")
     @ResponseBody
-    private Map addProductData(HttpServletRequest request){
+    private Map addProductData(@RequestParam String SproductName, @RequestParam String SproductIntro,
+                               @RequestParam MultipartFile Simg) throws Exception {
         Map<String, String> result = new HashMap<String, String>();
-        String pro_name = request.getParameter("pro_name");
-        String intro = request.getParameter("intro");
-        productsService.addProduct(pro_name, intro);
+//        String pro_name = request.getParameter("pro_name");
+//        String intro = request.getParameter("intro");
+        //String file = request.getParameter("file");
+        System.out.println(SproductName);
+        System.out.println(SproductIntro);
+        JSONObject params = new JSONObject();
+        String url = fileService.upload(Simg, params);
+        productsService.addProduct(SproductName, SproductIntro, url);
         result.put("result", "Success");
         result.put("message", "you have insert into a record successfully!");
         return result;
@@ -83,12 +91,15 @@ public class ProductsController {
 
     @RequestMapping(value = "/updateProduct")
     @ResponseBody
-    private Map updateProduct(HttpServletRequest request){
+    private Map updateProduct(HttpServletRequest request, @RequestParam MultipartFile img) throws Exception {
         Map<String, String> result = new HashMap<String, String>();
-        String pro_name = request.getParameter("pro_name");
-        String intro = request.getParameter("intro");
-        int fid = Integer.parseInt(request.getParameter("pro_id"));
-        productsService.updateProduct(pro_name, intro, fid);
+        String pro_name = request.getParameter("productName");
+        String intro = request.getParameter("productIntro");
+
+        JSONObject params = new JSONObject();
+        String url = fileService.upload(img, params);
+        //int fid = Integer.parseInt(request.getParameter("fid"));
+        productsService.updateProduct(pro_name, intro, 96, url);
         result.put("result", "Success");
         result.put("message", "you have update a record successfully!");
         return result;

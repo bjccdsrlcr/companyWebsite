@@ -12,16 +12,7 @@ import java.util.ListResourceBundle;
  *  新闻的操作接口：
  */
 public interface NewsDao {
-    /**
-     * 添加一条新闻
-     * @param title 新闻标题
-     * @param author 新闻作者, 新闻作者和当前登录的用户没有必然的关系
-     * @param date 日期
-     * @param text 新闻的正文内容
-     * @param blob 二进制流
-     *             @Param("title") String title, @Param("author") String author,
-     @Param("date") Date date, @Param("text") String text, @Param("blob") Blob blob
-     */
+
     public void addNews(News news);
 
     /**

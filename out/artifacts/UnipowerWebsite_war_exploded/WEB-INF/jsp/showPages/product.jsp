@@ -10,7 +10,7 @@
     <div class="main-block article col-sm-10 col-sm-offset-1">
         <h2 class="text-center">${products.pro_name}</h2>
         <h5 class="article-mark">
-            <a href="javascript:;" class="pull-right back" onclick="backToProduct()">返回产品列表&nbsp;>></a>
+            <%--<a href="javascript:;" class="pull-right back" onclick="backToProduct()">返回产品列表&nbsp;>></a>--%>
         </h5>
         <div class="article-content">
             <p>

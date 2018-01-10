@@ -22,7 +22,7 @@
                     <li>
                         <h4 class="news-title">
                             <a href="javascript:void(0)" onclick="getNewsById(${sk.fid})">${sk.title}</a>
-                            <span class="pull-right">${sk.date}</span>
+                            <span class="pull-right">${sk.date_str}</span>
                         </h4>
                         <p class="news-intro">
                                 ${sk.author}
@@ -64,12 +64,15 @@
             },
             success:function (result) {
                 console.log(result);
+//                for(var a = 0; i < result.length; a++){
+//                    result[a].date = new Date(parseInt(result[a].date)).toLocaleString().replace(/:d{1,2}$/,' ');
+//                }
                 var html = '';
                 for(var i = 0; i < result.length; i++){
                     html+= '<li>'+
                             '<h4 class="news-title">'+
                             '<a href="javascript:void(0)" onclick="getNewsById('+result[i].fid+')">'+result[i].title+'</a>'+
-                            '<span class="pull-right">'+result[i].date+'</span>'+
+                            '<span class="pull-right">'+new Date(parseInt(result[i].date)).toLocaleString().replace(/:d{1,2}$/,' ')+'</span>'+
                             '</h4>'+
                             '<p class="news-intro">'+result[i].author+'</p>'+
                             '</li>'

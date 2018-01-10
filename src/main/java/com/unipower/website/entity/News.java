@@ -18,6 +18,7 @@ public class News {
     private boolean is_pub;
     private List<String> type_name;
     private List<NewsType> newsTypes;
+    private String date_str;
 
     public int getFid() {
         return fid;
@@ -81,5 +82,13 @@ public class News {
 
     public void setNewsTypes(List<NewsType> newsTypes) {
         this.newsTypes = newsTypes;
+    }
+
+    public String getDate_str() {
+        return date_str;
+    }
+
+    public void setDate_str(String date_str) {
+        this.date_str = date_str;
     }
 }

@@ -1,5 +1,7 @@
 package com.unipower.website.entity;
 
+import org.springframework.stereotype.Repository;
+
 /**
  * Created by bjccdsrlcr on 2017/12/27.
  *  产品的实体类
@@ -12,7 +14,7 @@ public class Products {
     private String intro;
     private boolean is_hot;
     private boolean is_pub;
-
+    private String url;
     public int getFid() {
         return fid;
     }
@@ -51,5 +53,13 @@ public class Products {
 
     public void setIs_pub(boolean is_pub) {
         this.is_pub = is_pub;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

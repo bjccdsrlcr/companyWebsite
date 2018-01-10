@@ -20,10 +20,14 @@ public class ProductsService {
      * @param pro_name
      * @param intro
      */
-    public void addProduct(String pro_name, String intro){
-        productsDao.addProduct(pro_name, intro);
+    public void addProduct(String pro_name, String intro, String url){
+        productsDao.addProduct(pro_name, intro, url);
     }
 
+
+    public void addFile(String pro_name, String url){
+        productsDao.addFile(pro_name, url);
+    }
 
     /**
      * 根据产品的id删除产品
@@ -38,8 +42,8 @@ public class ProductsService {
      * 更新产品的信息
      * @param pro_name
      */
-    public void updateProduct(String pro_name, String intro, int fid){
-        productsDao.updateProduct(pro_name, intro, fid);
+    public void updateProduct(String pro_name, String intro, int fid, String url){
+        productsDao.updateProduct(pro_name, intro, fid, url);
     }
 
     /**

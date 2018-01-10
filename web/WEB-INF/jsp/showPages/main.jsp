@@ -148,9 +148,10 @@
         <h4>Popular Product</h4>
         <div class="row">
             <c:forEach items="${productsList}" var="sk">
-                <div class="col-md-3 col-sm-3 col-xs-12 item action" data-animate="bounceIn" data-delay="0.2s">
+                <div class="col-md-3 col-sm-3 col-xs-12 item action" data-animate="bounceIn" data-delay="0.2s"
+                     onclick="getProById(${sk.fid})">
                     <div class="img-wrap">
-                        <img src="/resources/assets/images/s1.jpg" width="100%" height="200"/>
+                        <img src="${sk.url}" width="100%" height="200"/>
                     </div>
                     <h3><a href="javascript:;">${sk.pro_name}</a></h3>
                     <p>${sk.intro}</p>
@@ -171,25 +172,26 @@
     </div>
 </div>
 
-<!--热门产品-->
-<div class="prices-block content content-center hidden" id="prices">
-    <div class="container">
-        <h2><strong>热门产品</strong></h2>
-        <h4>Popular Product</h4>
-        <div class="row" style="margin-top: 20px;">
-            <c:forEach items="${productsList}" var="sk">
-                <div class="col-md-3 col-sm-3 col-xs-12 item action" data-animate="bounceIn" data-delay="0.2s">
-                    <div class="img-wrap">
-                        <img src="/resources/assets/images/s1.jpg" width="100%" height="200"/>
-                    </div>
-                    <h3><a href="javascript:;">${sk.pro_name}</a></h3>
-                    <p>${sk.intro}</p>
-                </div>
-            </c:forEach>
-            </div>
-        </div>
-    </div>
-</div>
+<%--<!--热门产品-->--%>
+<%--<div class="prices-block content content-center hidden" id="prices">--%>
+    <%--<div class="container">--%>
+        <%--<h2><strong>热门产品</strong></h2>--%>
+        <%--<h4>Popular Product</h4>--%>
+        <%--<div class="row" style="margin-top: 20px;">--%>
+            <%--<c:forEach items="${productsList}" var="sk">--%>
+                <%--${sk.url}--%>
+                <%--<div class="col-md-3 col-sm-3 col-xs-12 item action" data-animate="bounceIn" data-delay="0.2s">--%>
+                    <%--<div class="img-wrap">--%>
+                        <%--<img src="${sk.url}" width="100%" height="200"/>--%>
+                    <%--</div>--%>
+                    <%--<h3><a href="javascript:;">${sk.pro_name}</a></h3>--%>
+                    <%--<p>${sk.intro}</p>--%>
+                <%--</div>--%>
+            <%--</c:forEach>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</div>--%>
 
 
 <!-- 典型案例 -->
@@ -220,31 +222,31 @@
     </div>
 </div>
 
-<!-- 合作 -->
-<div class="partners-block hidden">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-6">
-                <img src="/resources/assets/onepage/img/partners/cisco.png" alt="cisco">
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-6">
-                <img src="/resources/assets/onepage/img/partners/walmart.png" alt="walmart">
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-6">
-                <img src="/resources/assets/onepage/img/partners/gamescast.png" alt="gamescast">
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-6">
-                <img src="/resources/assets/onepage/img/partners/spinwokrx.png" alt="spinwokrx">
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-6">
-                <img src="/resources/assets/onepage/img/partners/ngreen.png" alt="ngreen">
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-6">
-                <img src="/resources/assets/onepage/img/partners/vimeo.png" alt="vimeo">
-            </div>
-        </div>
-    </div>
-</div>
+<%--<!-- 合作 -->--%>
+<%--<div class="partners-block hidden">--%>
+    <%--<div class="container">--%>
+        <%--<div class="row">--%>
+            <%--<div class="col-md-2 col-sm-3 col-xs-6">--%>
+                <%--<img src="/resources/assets/onepage/img/partners/cisco.png" alt="cisco">--%>
+            <%--</div>--%>
+            <%--<div class="col-md-2 col-sm-3 col-xs-6">--%>
+                <%--<img src="/resources/assets/onepage/img/partners/walmart.png" alt="walmart">--%>
+            <%--</div>--%>
+            <%--<div class="col-md-2 col-sm-3 col-xs-6">--%>
+                <%--<img src="/resources/assets/onepage/img/partners/gamescast.png" alt="gamescast">--%>
+            <%--</div>--%>
+            <%--<div class="col-md-2 col-sm-3 col-xs-6">--%>
+                <%--<img src="/resources/assets/onepage/img/partners/spinwokrx.png" alt="spinwokrx">--%>
+            <%--</div>--%>
+            <%--<div class="col-md-2 col-sm-3 col-xs-6">--%>
+                <%--<img src="/resources/assets/onepage/img/partners/ngreen.png" alt="ngreen">--%>
+            <%--</div>--%>
+            <%--<div class="col-md-2 col-sm-3 col-xs-6">--%>
+                <%--<img src="/resources/assets/onepage/img/partners/vimeo.png" alt="vimeo">--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</div>--%>
 <!-- Partners block END -->
 
 
@@ -287,6 +289,13 @@
             }
         });
     });
+    function getProById(fid) {
+        loadPage("/products/productsId="+fid+"/detail");
+        $('.wrapper').removeClass('slideInRight');
+        setTimeout(function() {
+            $('.wrapper').addClass('slideInRight');
+        }, 100)
+    }
     function getNewsById(fid) {
         loadPage("/news/newsId="+fid+"/detail");
         //window.location.hash = "article.jsp";

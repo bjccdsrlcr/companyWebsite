@@ -67,14 +67,14 @@
                             <input type="hidden" id="newsIdKey" class="form-control" />
                         </div>
                     </div>
+                    <%--wangEditor--%>
+
+                    <%--summernote--%>
                     <div id="editor"></div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" id="saveBtn" class="btn btn-primary">保存</button>
-                <button type="button" id="updateBtn" class="btn btn-primary">更新</button>
-                <button type="button" id="previewBtn" class="btn btn-primary">预览</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+
             </div>
         </div>
     </div>
@@ -199,10 +199,15 @@
             },
         })
 
-        //富文本编辑器
-        editor = new wangEditor('#editor');
-        editor.create();
-        //editor.txt.html('ffff');
+        //初始化编辑器
+        var content='Edit your article here...';
+        $('#editor').summernote({
+            lang: 'zh-CN',
+            height: 200
+        });
+        //赋值
+        $('#editor').code(content);
+
     });
 
     function checkAll(){
@@ -224,10 +229,13 @@
                 '<button type="button" id="newsSaveBtn" class="btn btn-primary">保存</button>'+
                 '<button type="button" id="newsPreBtn1" class="btn btn-primary">预览</button>'+
                 '<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>');
-            $('#newsSaveBtn').click(function () {
+            console.log($('#editor1').code());
+            $('#modal_news').on('click','#newsSaveBtn',function(){
                 var title = $('#titleKey').val();
                 var author = $('#authorKey').val();
-                var text = editor.txt.html();
+                //var text = editor.txt.html();
+                var text = $('#editor').code();
+                console.log(text);
                 $.ajax({
                     type: 'post',
                     url: '/news/addNewsData',
@@ -290,7 +298,7 @@
                 });
 
             });
-            $('#newsPreBtn1').click(function () {
+            $('#modal_news').on('click','#newsPreBtn1',function(){
                 var fid = $('#newsIdKey').val();
                 if(fid==''){
                     alert("必须先保存信息");
@@ -313,10 +321,12 @@
                      'newsId': fid
                 },
                 success:function (result) {
-                    console.log("newsInformation:" + result);
+                    console.log("author:" + result.author);
+                    console.log("title:" + result.title );
+                    console.log("text:" + result.text);
                     $('#titleKey').val(result.title);
                     $('#authorKey').val(result.author);
-                    editor.txt.html(result.text);
+                    $('#editor').code(result.text);
                 }
             });
             //ajax 2.得到新闻类别信息
@@ -335,10 +345,7 @@
                 }
             });
             // 点击事件触发存储过程
-            $('#newsUpdateBtn').click(function () {
-                var title = $('#titleKey').val();
-                var author = $('#authorKey').val();
-                var text = editor.txt.html();
+            $('#modal_news').on('click','#newsUpdateBtn',function(){
                 var typeIdList = [];
                 $('input[name=updateType]').each(function(idx,item){
                     if($(this).is(':checked')){
@@ -364,6 +371,10 @@
                     }
                 });
                 // ajax 4 将新闻更新后的基础信息 传到后台进行处理
+                var title = $('#titleKey').val();
+                var author = $('#authorKey').val();
+                console.log("author"+author);
+                var text = $('#editor').code();
                 $.ajax({
                     type: 'post',
                     url: '/news/updateNewsData',
@@ -386,7 +397,7 @@
 
                 $news.ajax.reload();
             });
-            $('#newsPreBtn').click(function () {
+            $('#modal_news').on('click','#newsPreBtn',function(){
                 window.open("/news/newsId="+fid+"/detail");
             });
         }

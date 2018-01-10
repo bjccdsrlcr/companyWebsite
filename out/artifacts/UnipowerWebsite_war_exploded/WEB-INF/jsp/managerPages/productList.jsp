@@ -33,7 +33,7 @@
     </div>
 </div>
 
-<div class="modal" id="modal_product">
+<div class="modal" id="modal_product_save">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -41,43 +41,84 @@
                 <h4 class="modal-title">发布产品</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" role="form" onsubmit="return false;">
+                <form class="form-horizontal" role="form" id="productSaveForm" enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <label class="col-sm-2 control-label">产品名称</label>
                         <div class="col-sm-10">
-                            <input class="form-control" id="productNameKey"/>
+                            <input class="form-control" name="SproductName"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">产品简介</label>
                         <div class="col-sm-10">
-                            <textarea rows="5" class="form-control" id="productIntrodKey"></textarea>
+                            <textarea rows="5" class="form-control" name="SproductIntro"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label"></label>
+                        <label class="col-sm-2 control-label">产品图片</label>
                         <div class="col-sm-10">
-                            <input type="hidden" id="proIdKey" class="form-control" />
+                            <input type="file" name="Simg">
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">产品简介</label>
-                        <div class="col-sm-10">
-                            <input type="file" id="productImg">
-                        </div>
-                    </div>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <input type="submit" class="btn btn-primary">
                 </form>
             </div>
             <div class="modal-footer">
-                <%--<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>--%>
-                <%--<button type="button" class="btn btn-primary" id="proSaveBtn">确定</button>--%>
+
             </div>
         </div>
     </div>
 </div>
+
+<div class="modal" id="modal_product_update">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">编辑产品</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="productUpdateForm" enctype="multipart/form-data" method="post">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">产品名称</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="productNameKey" name="productName"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">产品简介</label>
+                        <div class="col-sm-10">
+                            <textarea rows="5" class="form-control" id="productIntrodKey" name="productIntro"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <img id="productImg">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">产品图片</label>
+                        <div class="col-sm-10">
+                            <input type="file" name="img">
+                        </div>
+                    </div>
+
+                    <a  href="index.jsp" class="btn btn-default" data-dismiss="modal">取消</a>
+                    <input type="submit" class="btn btn-primary" id="proSaveBtn">
+                </form>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="addProResultModel" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -92,12 +133,12 @@
             </div>
 
             <div class="modal-footer">
-
                 <a href="#" class="btn" data-dismiss="modal">关闭</a>
             </div>
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
     //	l - Length changing 改变每页显示多少条数据的控件
     //	f - Filtering input 即时搜索框控件
@@ -193,40 +234,35 @@
             })
         }
     }
+    $('#modal_product_save').on('hide.bs.modal', function () {
+        console.log('嘿，我听说您喜欢模态框...');
+        window.location.href = '/index/indexPage'});
+    $('#modal_product_update').on('hide.bs.modal', function () {
+        console.log('嘿，我听说您喜欢模态框...');
+        window.location.href = '/index/indexPage'});
     function openModalProduct(flag, fid){
-        $('#modal_product').modal('show');
         if (flag==0) {
-            $('#modal_product').find('.modal-title').html('发布产品');
-            $('#modal_product').find('.modal-footer').html(
-                '<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>'+
-                '<button type="button" id="proSaveBtn" class="btn btn-primary">保存</button>');
-            $('#proSaveBtn').click(function () {
-                var productName = $('#productNameKey').val();
-                var productIntrod = $('#productIntrodKey').val();
-                $.ajax({
+            $('#modal_product_save').modal('show');
+            $('#productSaveForm').on('submit', function(e) {
+                e.preventDefault(); // <-- important
+                $(this).ajaxSubmit({
+                    beforeSubmit:function (formData, jqForm, options) {
+                        console.log(formData);
+                    },
                     type: 'post',
                     url: '/products/addProductsData',
-                    data: {
-                        'pro_name': productName,
-                        'intro': productIntrod
-                    },
-                    async: false,
-                    success: function (result) {
+                    clearForm: true,
+                    success:function (result) {
                         if (result.result == "Success") {
-
-                            $('#addProResultModel').modal('show');
-                            $('#addProResultModel').find('.modal-body').html('添加成功');
-                            $product.ajax.reload();
+                            alert("添加成功!");
+                            window.location.href = "/index/indexPage";
                         }
                     }
                 });
-
             });
+
         }else if(flag == 1){
-            $('#modal_product').find('.modal-title').html('编辑产品');
-            $('#modal_product').find('.modal-footer').html(
-                '<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>'+
-                '<button type="button" id="proUpdateBtn" class="btn btn-primary">更新</button>');
+            $('#modal_product_update').modal('show');
             $.ajax({
                 type: 'post',
                 url: '/products/getProductById',
@@ -236,36 +272,31 @@
                 async: false,
                 success: function (result) {
                     console.log(result);
+                    console.log(result.url);
                     $('#productNameKey').val(result.pro_name);
                     $('#productIntrodKey').val(result.intro);
+                    $('#productImg').attr("src", result.url);
                 }
             });
-            $('#proUpdateBtn').click(function () {
-                var productName = $('#productNameKey').val();
-                var productIntrod = $('#productIntrodKey').val();
-                $.ajax({
+            $('#productUpdateForm').on('submit', function(e) {
+                e.preventDefault(); // <-- important
+                $(this).ajaxSubmit({
+                    beforeSubmit:function (formData, jqForm, options) {
+                        console.log(formData)
+                    },
                     type: 'post',
                     url: '/products/updateProduct',
-                    data: {
-                        'pro_name': productName,
-                        'intro': productIntrod,
-                        'pro_id': fid
-                    },
-                    async: false,
-                    success: function (result) {
+                    clearForm: true,
+                    success:function (result) {
                         if (result.result == "Success") {
-
-                            $('#addProResultModel').modal('show');
-                            $('#addProResultModel').find('.modal-body').html('更新成功');
-                            $product.ajax.reload();
+                            alert("更新成功!");
+                            window.location.href = "/index/indexPage";
                         }
                     }
                 });
-
             });
         }
     }
-
     function isPub(id) {
         console.log(id);
         $.ajax({

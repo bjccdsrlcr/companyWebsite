@@ -50,7 +50,8 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">解决方案简介</label>
                         <div class="col-sm-10">
-                            <textarea rows="5" class="form-control" id="solutionIntrodKey"></textarea>
+
+                            <div id="solutionEditor"></div>
                         </div>
                     </div>
 
@@ -144,7 +145,15 @@
                 }
             },
         })
-
+        //文本编辑器
+        //初始化编辑器
+        var content='Edit your article here...';
+        $('#solutionEditor').summernote({
+            lang: 'zh-CN',
+            height: 200
+        });
+        //赋值
+        $('#solutionEditor').code(content);
     });
 
     function checkAll(){
@@ -165,9 +174,9 @@
             $('#modal_solution').find('.modal-footer').html(
                 '<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>'+
                 '<button type="button" id="solSaveBtn" class="btn btn-primary">保存</button>');
-            $('#solSaveBtn').click(function () {
+            $('#modal_solution').on('click','#solSaveBtn',function(){
                 var solutionName = $('#solutionNameKey').val();
-                var solutionIntrod = $('#solutionIntrodKey').val();
+                var solutionIntrod = $('#solutionEditor').code();
                 $.ajax({
                     type: 'post',
                     url: '/solutions/addSolutionData',
@@ -205,9 +214,9 @@
                     $('#solutionIntrodKey').val(result.intro);
                 }
             });
-            $('#solUpdateBtn').click(function () {
+            $('#modal_solution').on('click','#solUpdateBtn',function(){
                 var solutionName = $('#solutionNameKey').val();
-                var solutionIntrod = $('#solutionIntrodKey').val();
+                var solutionIntrod = $('#solutionEditor').code();
                 $.ajax({
                     type: 'post',
                     url: '/solutions/updateSolution',

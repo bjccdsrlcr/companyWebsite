@@ -27,13 +27,15 @@ import java.util.List;
  * isHot? isTop
  */
 public interface ProductsDao {
+
     /**
      * 添加产品
      * @param pro_name 产品名称
      * @param intro 产品介绍
      */
-    public void addProduct(@Param("pro_name") String pro_name, @Param("intro") String intro);
+    public void addProduct(@Param("pro_name") String pro_name, @Param("intro") String intro, @Param("url") String url);
 
+    public void addFile(@Param("pro_name") String pro_name, @Param("url") String url);
 
     /**
      * 根据产品的id删除产品
@@ -47,7 +49,8 @@ public interface ProductsDao {
      * @param pro_name
      * @param intro
      */
-    public void updateProduct(@Param("pro_name") String pro_name, @Param("intro") String intro, @Param("fid") int fid);
+    public void updateProduct(@Param("pro_name") String pro_name, @Param("intro") String intro,
+                              @Param("fid") int fid, @Param("url") String url);
 
     /**
      * 产品是否发布?

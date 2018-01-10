@@ -5,8 +5,14 @@
 <mapper namespace="com.unipower.website.dao.ProductsDao">
     <insert id="addProduct" parameterType="com.unipower.website.entity.Products">
           INSERT INTO
-                     products(pro_name, intro)
-          VALUES(#{pro_name}, #{intro})
+                     products(pro_name, intro, url)
+          VALUES(#{pro_name}, #{intro}, #{url})
+    </insert>
+
+    <insert id="addFile" parameterType="com.unipower.website.entity.Products">
+        INSERT INTO
+        products(pro_name, url)
+        VALUES(#{pro_name}, #{url})
     </insert>
 
     <delete id="deleteProduct" parameterType="int">
@@ -21,7 +27,8 @@
               products
         SET
               pro_name = #{pro_name},
-              intro = #{intro}
+              intro = #{intro},
+              url = #{url}
         WHERE
               fid = #{fid}
     </update>
@@ -67,6 +74,5 @@
                 *
         FROM
               products
-        limit 10
     </select>
 </mapper>

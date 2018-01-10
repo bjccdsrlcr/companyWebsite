@@ -48,12 +48,12 @@ public class NewsController {
     private Map addnewsData(HttpServletRequest request, HttpServletResponse response) throws ParseException {
         String title  = request.getParameter("title");
         String author  = request.getParameter("author");
-        Date date = DateUtil.getFormatDate(new Date());
+        //Date date = DateUtil.getFormatDate(new Date());
         String text = request.getParameter("text");
         News news = new News();
-        news.setAuthor(author);
-        news.setDate(date);
         news.setTitle(title);
+        news.setAuthor(author);
+        news.setDate(new Date());
         news.setText(text);
         newsService.addNews(news);
         System.out.println(news.getFid());
@@ -89,9 +89,9 @@ public class NewsController {
         int newsId = Integer.parseInt(fid);
         String title  = request.getParameter("title");
         String author  = request.getParameter("author");
-        Date date = DateUtil.getFormatDate(new Date());
+
         String text = request.getParameter("text");
-        newsService.updateNews(newsId, title, date, author, text);
+        newsService.updateNews(newsId, title, new Date(), author, text);
         Map<String, String> result = new HashMap<String, String>();
         result.put("result", "success");
         return result;
@@ -130,8 +130,11 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/newsPubList")
-    private String newsPubList(Model model, HttpSession session){
+    private String newsPubList(Model model, HttpSession session) throws ParseException {
         List<News> newsPubList = newsService.getPubNews();
+        for (int i = 0; i < newsPubList.size(); i++){
+            newsPubList.get(i).setDate_str(DateUtil.getFormatDate(newsPubList.get(i).getDate()));
+        }
         List<NewsType> newsTypeList = newsTypeService.getNewsTypeList();
         String username = (String)session.getAttribute("username");
         System.out.println(username);

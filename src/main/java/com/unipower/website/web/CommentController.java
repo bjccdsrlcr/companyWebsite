@@ -49,8 +49,8 @@ public class CommentController {
         String path = request.getRequestURI();
         //int news_id = GetIDs.getIDsFromPath(path);
         int news_id = Integer.parseInt(request.getParameter("fid"));
-        Date date = DateUtil.getFormatDate(new Date());
-        commentService.addComment(date, text, (Integer) user_id, news_id);
+        //Date date = DateUtil.getFormatDate(new Date());
+        commentService.addComment(new Date(), text, (Integer) user_id, news_id);
         Map<String, String> result = new HashMap<String, String>();
         result.put("result", "success");
         return result;

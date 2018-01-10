@@ -22,7 +22,6 @@
 
 <script type="text/javascript">
     function backToSolution(){
-        $('.wrapper').load('/resources/assets/html/solution.html');
-        window.location.hash = "solution.html";
+       loadPage('/solutions/solutionShowList')
     }
 </script>
