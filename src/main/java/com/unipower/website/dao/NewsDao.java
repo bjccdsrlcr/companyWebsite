@@ -12,7 +12,10 @@ import java.util.ListResourceBundle;
  *  新闻的操作接口：
  */
 public interface NewsDao {
-
+    /**
+     * 添加一条新闻
+     * @param news
+     */
     public void addNews(News news);
 
     /**
@@ -22,17 +25,20 @@ public interface NewsDao {
      */
     public List<News> getNews();
 
+
     /**
      * 查询得到数据库中的所有新闻
      * @return
      */
     public List<News> getAllNews();
+
     /**
      * 通过id查询一条新闻，或者是前段触发一个点击事件，将某一条新闻的fid传到控制器，由控制器处理得到该条新闻。
      * @param fid
      * @return
      */
     public News getNewsById(int fid);
+
 
     /**
      * 通过新闻的名字搜索新闻 %模糊搜索%
@@ -41,12 +47,14 @@ public interface NewsDao {
      */
     public List<News> getNewsByTitle(String title);
 
+
     /**
      * 根据日期搜索新闻
      * @param date
      * @return
      */
     public List<News> getNewsByDate(Date date);
+
 
     /**
      * 根据新闻类别查询该新闻类别下的所有新闻
@@ -55,6 +63,7 @@ public interface NewsDao {
      * @return
      */
     public List<News> getNewsByType(int typeId);
+
 
     /**
      * 更新新闻的基础信息
@@ -66,11 +75,13 @@ public interface NewsDao {
     public void updateNews(@Param("fid") int fid, @Param("title") String title, @Param("author") String author,
                            @Param("date") Date date, @Param("text") String text);
 
+
     /**
      * 更改新闻的发布状态
      * @param fid
      */
     public void updateNewsIsPub(@Param("fid") int fid, @Param("is_pub") boolean is_pub);
+
     /**
      * 删除某一条新闻
      * @param fid

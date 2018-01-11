@@ -125,7 +125,7 @@
     </column>
     <column id="35" parent="11" name="author">
       <Position>6</Position>
-      <DataType>varchar(30)|0</DataType>
+      <DataType>text|0</DataType>
       <DefaultExpression>&apos;admin&apos;</DefaultExpression>
     </column>
     <column id="36" parent="11" name="is_pub">
